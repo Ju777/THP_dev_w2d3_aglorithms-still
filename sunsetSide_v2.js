@@ -7,7 +7,11 @@ function enter() {
 }
 
 function initialize() {
-    let size = prompt("Quelle taille de tableau pour la recherche ? ");
+    let size = prompt("Quelle taille du tableau de recherche ? > ");
+    while(parseInt(size) != size || parseInt(size) <= 0) {
+        size = prompt("Erreur : veuillez entrez un entier positif > ");
+    }
+
     let objectToTest = {
         array: Array.from({length: size}, () => Math.floor(Math.random() * 100)),
         // westViews: 0,
@@ -62,7 +66,7 @@ function perform() {
 
     // Fonction de la question 2.3.2
     let search = sunsetSide_v2(objectToTest);
-    console.log(`\nIl y a ${search.niceBuildings.length} bâtiments avec vue sur l'ouest => ${search.niceBuildings}`);
+    console.log(`\nIl y a ${search.niceBuildings.length} bâtiments avec vue sur l'ouest => ${search.niceBuildings}.`);
     // console.log(`nbComparisons => ${nbComparisons}`);
 
 }

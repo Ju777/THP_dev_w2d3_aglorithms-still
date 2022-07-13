@@ -8,12 +8,12 @@ function enter() {
 
 function dataToObject() {
     let sum = prompt("Quelle somme doit-on tester ? > ");
-    while(parseInt(sum) != sum || parseInt(sum) < 0) {
+    while(parseInt(sum) != sum || parseInt(sum) <= 0) {
         sum = prompt("Erreur : veuillez entrez un entier positif > ");
     }
 
     let size = prompt("Quelle taille du tableau de recherche ? > ");
-    while(parseInt(size) != size || parseInt(size) < 0) {
+    while(parseInt(size) != size || parseInt(size) <= 0) {
         size = prompt("Erreur : veuillez entrez un entier positif > ");
     }
 
