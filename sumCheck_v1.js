@@ -31,8 +31,17 @@ function sumCheck_v1(object) {
 }
 
 function initialize() {
-    let size = prompt("Quelle taille du tableau pour la recherche ? ");
-    let sum = prompt("Quelle somme d'entiers tester ? ");
+
+    let sum = prompt("Quelle somme doit-on tester ? > ");
+    while(parseInt(sum) != sum || parseInt(sum) < 0) {
+        sum = prompt("Erreur : veuillez entrez un entier positif > ");
+    }
+
+    let size = prompt("Quelle taille du tableau de recherche ? > ");
+    while(parseInt(size) != size || parseInt(size) < 0) {
+        size = prompt("Erreur : veuillez entrez un entier positif > ");
+    }
+    
     let objectToTest = {
         array: Array.from({length: size}, () => Math.floor(Math.random() * 100)),
         sum: parseInt(sum)
