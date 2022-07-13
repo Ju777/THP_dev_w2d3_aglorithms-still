@@ -24,9 +24,9 @@ function dataToObject() {
     };
 
     //Log de vérif
-    console.log("\n Vos données sont :");
-    console.log(objectToTest);
-    console.log("\n");
+    console.log("\nVos données vont apparaître :");
+    enter();
+    console.log(`\n${objectToTest.sum} est la somme recherchée parmi ${size} valeurs aléatoires :\n\n${objectToTest.array}\n`);
     enter();
 
     return objectToTest;

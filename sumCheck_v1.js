@@ -1,5 +1,6 @@
 const fs = require('fs');
 const prompt = require("prompt-sync")({ sigint: true });
+var nbComparisons = 0;
 
 function enter() {
     return prompt("[ENTER]");
@@ -14,8 +15,9 @@ function sumCheck_v1(object) {
             // console.log("\n\tPETITE ITERATION N°" + j);
             // console.log(`object.array[${i}] + object.array[${j}] =>  ${object.array[i]} + ${object.array[j]} = ${object.array[i] + object.array[j]} alors que object.sum = ${object.sum}`);
             // enter();
-
+            nbComparisons++;
             if (object.array[i] + object.array[j] === object.sum) {
+                
                 // console.log("ON EST DANS LE IF A ");
                 // enter();
                 let result = {
@@ -46,9 +48,13 @@ function initialize() {
         array: Array.from({length: size}, () => Math.floor(Math.random() * 100)),
         sum: parseInt(sum)
     };
-    // log de vérif
-    // console.log(objectToTest);
-    // enter();
+
+    //Log de vérif
+    console.log("\nVos données vont apparaître :");
+    enter();
+    console.log(`\n${objectToTest.sum} est la somme recherchée parmi ${size} valeurs aléatoires :\n\n${objectToTest.array}\n`);
+    enter();
+
     return objectToTest;
 }
 
@@ -60,8 +66,8 @@ function perform() {
     // Initialisation des données
     let objectToTest = initialize();
     // log de vérif
-    console.log(`Initialisation = ${objectToTest.array} / SOMME RECHERCHÉE = ${objectToTest.sum}`);
-    enter();
+    // console.log(`Initialisation = ${objectToTest.array} / SOMME RECHERCHÉE = ${objectToTest.sum}`);
+    // enter();
 
     // Fonction de la question 2.3.1
     let search = sumCheck_v1(objectToTest);
@@ -70,6 +76,8 @@ function perform() {
     } else {
         console.log(`Aucune possibilité n'a été trouvée pour obtenir ${objectToTest.sum}`);
     }
+
+    console.log(`nbComparisons => ${nbComparisons}`)
 }
 
 perform();
