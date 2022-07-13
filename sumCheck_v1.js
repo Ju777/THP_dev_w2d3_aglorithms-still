@@ -17,9 +17,6 @@ function sumCheck_v1(object) {
             // enter();
             nbComparisons++;
             if (object.array[i] + object.array[j] === object.sum) {
-                
-                // console.log("ON EST DANS LE IF A ");
-                // enter();
                 let result = {
                     answer: true,
                     numbers: `Les nombres gagnants sont ${object.array[i]} + ${object.array[j]} = ${object.sum}`
@@ -77,7 +74,7 @@ function perform() {
         console.log(`Aucune possibilité n'a été trouvée pour obtenir ${objectToTest.sum}`);
     }
 
-    console.log(`nbComparisons => ${nbComparisons}`)
+    console.log(`nbComparisons => ${nbComparisons}`);
 }
 
 perform();

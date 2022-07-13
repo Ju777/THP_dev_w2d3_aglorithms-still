@@ -1,5 +1,6 @@
 const fs = require('fs');
 const prompt = require("prompt-sync")({ sigint: true });
+var nbComparisons = 0;
 
 function enter() {
     return prompt("[ENTER]");
@@ -61,9 +62,9 @@ function merging(left, right, array) {
     let k = 0;
 
     while(i < left.length && j < right.length) {
-        
+        nbComparisons++;
         if(left[i] < right[j]) {
-            this.nbComparisons++;
+            
             array[k] = left[i];
             i++;
             k++;
@@ -100,6 +101,7 @@ function  sumCheck_v2(object) {
     let l = 0;
     let r = array.length -1 ;
     while(l !== r) {
+        nbComparisons++;
         if (array[l] + array[r] > object.sum) {
             // console.log("CP A");
             // console.log(`On a ${array[l]} + ${array[r]} PLUS GRAND QUE`);
@@ -159,6 +161,8 @@ function perform() {
     } else {
         console.log(`${search} => pas de solution trouvée.`);
     }
+
+    console.log(`nbComparisons => ${nbComparisons}`);
     
 }
 
