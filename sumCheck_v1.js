@@ -8,13 +8,7 @@ function enter() {
 
 function sumCheck_v1(object) {
     for(let i = 0 ; i < object.array.length - 1 ; i++){
-        // console.log("\n" + "~".repeat(50));
-        // console.log("GRANDE ITERATION N°" + i);
-        // console.log("-".repeat(50));
         for(let j = i+1 ; j < object.array.length ; j++) {
-            // console.log("\n\tPETITE ITERATION N°" + j);
-            // console.log(`object.array[${i}] + object.array[${j}] =>  ${object.array[i]} + ${object.array[j]} = ${object.array[i] + object.array[j]} alors que object.sum = ${object.sum}`);
-            // enter();
             nbComparisons++;
             if (object.array[i] + object.array[j] === object.sum) {
                 let result = {
@@ -62,9 +56,6 @@ function perform() {
 
     // Initialisation des données
     let objectToTest = initialize();
-    // log de vérif
-    // console.log(`Initialisation = ${objectToTest.array} / SOMME RECHERCHÉE = ${objectToTest.sum}`);
-    // enter();
 
     // Fonction de la question 2.3.1
     let search = sumCheck_v1(objectToTest);

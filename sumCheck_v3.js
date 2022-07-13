@@ -19,9 +19,7 @@ function dataToObject() {
 
     objectToTest = {
         array: Array.from({length: size}, () => Math.floor(Math.random() * 100)),
-        // array: [ 31, 59, 80, 44, 8, 20, 38, 40, 25, 36, 88, 13, 9, 33, 81, 27, 33, 91, 1, 62 ],
         sum: parseInt(sum)
-        // pairs: []
     };
 
     //Log de vérif
@@ -39,7 +37,6 @@ function  sumCheck_v3(object) {
     for(let i = 0 ; i < array.length ; i++) {
         let subArray = array.slice(i, array.length);
         nbComparisons++;
-        // console.log(subArray);
         if(subArray.includes(object.sum - array[i])) {
             console.log(`Victoire ! ${array[i]} + ${array[array.indexOf(object.sum - array[i])]}`);
             enter();

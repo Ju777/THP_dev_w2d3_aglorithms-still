@@ -14,7 +14,6 @@ function initialize() {
 
     let objectToTest = {
         array: Array.from({length: size}, () => Math.floor(Math.random() * 100)),
-        // westViews: 0,
         niceBuildings: []
     };
 
@@ -29,23 +28,13 @@ function initialize() {
 
 function sunsetSide_v2(object) {
     array = object.array;
-    // let condition = value => array[i] > value; 
 
     for(let i = 0 ; i < array.length ; i++) {
-        // console.log("\nBOUCLE FOR : ITERATION N° " + i);
-        // enter();
 
         let subArray = array.slice(i+1, array.length);
-        // console.log(`Test de ${array[i]} dans le subArray ${subArray}`);
-        // enter();
-
-        let temp = 50;
 
         if (subArray.every(item => item < array[i])){
-            // console.log(`TOUS INFERIEURS A ${array[i]}`);
-            // enter();
             object.niceBuildings.push(array[i]);
-            // nbComparisons++;
         }
     }
 
@@ -60,14 +49,9 @@ function perform() {
 
     // Initialisation des données
     let objectToTest = initialize();
-    // log de vérif
-    // console.log(`Liste de buildings = ${objectToTest.array}`);
-    // enter();
 
-    // Fonction de la question 2.3.2
     let search = sunsetSide_v2(objectToTest);
     console.log(`\nIl y a ${search.niceBuildings.length} bâtiments avec vue sur l'ouest => ${search.niceBuildings}.`);
-    // console.log(`nbComparisons => ${nbComparisons}`);
 
 }
 

@@ -19,7 +19,6 @@ function dataToObject() {
 
     objectToTest = {
         array: Array.from({length: size}, () => Math.floor(Math.random() * 100)),
-        // array: [ 31, 59, 80, 44, 8, 20, 38, 40, 25, 36, 88, 13, 9, 33, 81, 27, 33, 91, 1, 62 ],
         sum: parseInt(sum),
         pairs: []
     };
@@ -37,8 +36,6 @@ function mergeSort(array) { // Using recursion
    
     // Base case : si le tableau array contient 1 élélent ou moins, on le retourne.
     if (array.length < 2) {
-        // console.log(`Récursion terminés pour ${array}.`)
-        // prompt("[ENTER]");
         return array;
     }
     
@@ -93,9 +90,6 @@ function  sumCheck_v2(object) {
     // First we sort the array.
     let array = object.array;
     mergeSort(array, 0, array.length-1);
-    //Log de vérif
-    // console.log(object);
-    // enter();
 
     // The we check the sum through the "two-ponters" method (https://www.geeksforgeeks.org/given-an-array-a-and-a-number-x-check-for-pair-in-a-with-sum-as-x/)
     let l = 0;
@@ -103,26 +97,14 @@ function  sumCheck_v2(object) {
     while(l !== r) {
         nbComparisons++;
         if (array[l] + array[r] > object.sum) {
-            // console.log("CP A");
-            // console.log(`On a ${array[l]} + ${array[r]} PLUS GRAND QUE`);
-            // enter();
             r--;
-            // console.log(`On va donc tester avec ${array[l]} + ${array[r]} ?`);
-            // enter();
         }
 
         if (array[l] + array[r] < object.sum) {
-            // console.log("CP B");
-            // console.log(`On a ${array[l]} + ${array[r]} PLUS PETIT QUE`);
-            // enter();
             l++;
-            // console.log(`On va donc tester avec ${array[l]} + ${array[r]} ?`);
-            // enter();
         }
 
         if (array[l] + array[r] === object.sum) {
-            // console.log("CP C => SOMME TROUVÉE");
-            // enter();
             let result = {
                 answer: true,
                 foundPair: `${array[l]} + ${array[r]}`
@@ -142,19 +124,6 @@ function perform() {
     // Initialisation des données
     var objectToTest = dataToObject();
 
-    // Fonction de la question 2.3.3 v2
-    // let search = sumCheck_v2(objectToTest);
-
-    // if (search) {
-    //     console.log("\n" + "~".repeat(30));
-    //     console.log(`Voici les paires trouvées avec sumCheck_v2 pour ${objectToTest.sum} :`);
-    //     console.log(objectToTest.pairs);
-    //     console.log("~".repeat(30));
-    // } else {
-    //     console.log("\nPas de paires additionnables trouvées.")
-    // }
-    // enter();
-
     let search =  sumCheck_v2(objectToTest);
     if (search) {
         console.log(`${search.answer} => ${search.foundPair}`);
@@ -162,8 +131,7 @@ function perform() {
         console.log(`${search} => pas de solution trouvée.`);
     }
 
-    console.log(`nbComparisons => ${nbComparisons}`);
-    
+    console.log(`nbComparisons => ${nbComparisons}`);   
 }
 
 perform();
