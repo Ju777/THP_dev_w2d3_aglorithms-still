@@ -1,5 +1,6 @@
 const fs = require('fs');
 const prompt = require("prompt-sync")({ sigint: true });
+var nbComparisons = 0;
 
 function enter() {
     return prompt("[ENTER]");
@@ -14,9 +15,11 @@ function sunsetSide_v1(object) {
 
         let count = i+1;
         for(let j = i+1 ; j < array.length ; j++) {
+            
             // Ce que l'on cherche à vérifier ici : que tous les nombers qui suivent array[i] lui sont inférieurs.
             if(array[i] > array[j]) {
                 count++;
+                nbComparisons++;
                 // console.log(`${array[i]} > ${array[j]} => count ++ : ${count}`);
                 // enter();
             }
@@ -38,9 +41,14 @@ function initialize() {
         // westViews: 0,
         niceBuildings: []
     };
-    // log de vérif
-    // console.log(objectToTest);
-    // enter();
+
+    // Log de vérif
+    console.log("\nVos données vont apparaître :");
+    enter();
+    console.log(objectToTest);
+    console.log("\n");
+    enter();
+
     return objectToTest;
 }
 
@@ -52,12 +60,13 @@ function perform() {
     // Initialisation des données
     let objectToTest = initialize();
     // log de vérif
-    console.log(`Liste de buildings = ${objectToTest.array}`);
-    enter();
+    // console.log(`Liste de buildings = ${objectToTest.array}`);
+    // enter();
 
     // Fonction de la question 2.3.2
     let search = sunsetSide_v1(objectToTest);
-    console.log(`Il y a ${search.niceBuildings.length} bâtiments avec vue sur l'ouest => ${search.niceBuildings}`);
+    console.log(`\nIl y a ${search.niceBuildings.length} bâtiments avec vue sur l'ouest => ${search.niceBuildings}`);
+    console.log(`nbComparisons => ${nbComparisons}`);
 
 }
 
