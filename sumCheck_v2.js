@@ -88,7 +88,7 @@ function merging(left, right, array) {
     return array;
 }
 
-function sumCheck_v3(object) {
+function  sumCheck_v2(object) {
     // First we sort the array.
     let array = object.array;
     mergeSort(array, 0, array.length-1);
@@ -153,7 +153,7 @@ function perform() {
     // }
     // enter();
 
-    let search = sumCheck_v3(objectToTest);
+    let search =  sumCheck_v2(objectToTest);
     if (search) {
         console.log(`${search.answer} => ${search.foundPair}`);
     } else {
