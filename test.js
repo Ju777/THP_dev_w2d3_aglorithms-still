@@ -10,12 +10,7 @@ function perform() {
     console.log(`Tableau généré = ${randomArray}`);
     prompt("[ENTER TO CONTINUE]");
 
-    console.log(`\nAffichage des index croissants via un forEach :`);
-    console.log("INDEX \t-> VALEUR");
-    randomArray.map(item => {
-        // let subArray = randomArray.slice(randomArray.indexOf(item), randomArray.length);
-        console.log(`${item}`);
-    });
+    
 }
 
 perform();
